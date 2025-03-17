@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>CFC</title>
+      <link rel="icon" href="">
+      <link rel="stylesheet" href="style.css">
+      <script>
+        // Function to validate the form
+        function validateForm() {
+            // Get the form elements
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var email = document.getElementById("email").value;
+            var resume = document.getElementById("resume").value;
+
+            // Check if name is empty
+            if (name == "") {
+                alert("Name is required.");
+                return false;
+            }
+
+            // Check if age is valid
+            if (age == "" || age < 18) {
+                alert("Please enter a valid age (18 or above).");
+                return false;
+            }
+
+            // Check if gender is selected
+            if (!gender) {
+                alert("Please select your gender.");
+                return false;
+            }
+
+            // Check if email is valid
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email.");
+                return false;
+            }
+
+            // Check if resume is uploaded
+            if (resume == "") {
+                alert("Please upload your resume.");
+                return false;
+            }
+
+            return true; // Submit the form if all validations pass
+        }
+      </script>
+</head> 
+<body>
+    <!--Step 11 Copy Paste the previous title-->
+    <center>
+        <h1>CFC RESTAURANT</h1>
+    </center>
+
+    <center>
+    <!--Step 12 Create a line-->
+    <hr>
+    <!--Step 13 Create a form using table-->
+    <h2>APPLICATION FORM</h2>
+    <form onsubmit="return validateForm()">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" id="age"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+
+            <tr>
+                <td>Upload your Resume</td>
+                <td><input type="file" id="resume"></td>
+            </tr>
+            <tr>
+                <td><input type="reset"></td>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+
+    <!--Step 14 Create a line-->
+    <hr>
+    <p> 
+        <a href="findex.html">Home</a> |<a href="https://www.instagram.com/errormakesclever/"> Instagram </a> | <a href="https://www.youtube.com/@ErrorMakesClever">Youtube</a> 
+    </p>
+    <hr>
+    </center>
+
+</body>
+</html>
